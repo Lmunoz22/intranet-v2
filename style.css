@@ -1,0 +1,266 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --navy: #0f2557;
+  --navy2: #1a3a8f;
+  --dark: #0a1628;
+  --gold: #f5a800;
+  --gold2: #ffc107;
+  --gray: #f3f4f6;
+  --text: #374151;
+  --white: #ffffff;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--dark) 0%,
+    var(--navy) 55%,
+    var(--navy2) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Contenedor principal */
+.login-container {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Tarjeta de login */
+.login-card {
+  width: 100%;
+  background: var(--white);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(10, 22, 40, 0.35);
+  animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Encabezado */
+.login-header {
+  background: linear-gradient(
+    135deg,
+    var(--dark),
+    var(--navy)
+  );
+  padding: 2rem 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+  color: var(--white);
+}
+
+.login-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--gold);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  box-shadow: 0 8px 24px rgba(245, 168, 0, 0.3);
+}
+
+.login-icon i {
+  font-size: 1.7rem;
+  color: var(--dark);
+}
+
+.login-header h1 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.login-header p {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Botón para cerrar */
+.close-button {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Formulario */
+.login-form {
+  padding: 1.8rem 2rem 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+/* Campos de entrada */
+.input-wrap {
+  position: relative;
+}
+
+.input-wrap > i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.input-wrap input {
+  width: 100%;
+  padding: 12px 42px 12px 38px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  color: var(--dark);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-wrap input:focus {
+  border-color: var(--navy2);
+}
+
+.input-wrap input::placeholder {
+  color: #9ca3af;
+}
+
+/* Mostrar u ocultar contraseña */
+.toggle-pass {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  padding: 5px;
+}
+
+.toggle-pass:hover {
+  color: var(--navy);
+}
+
+/* Recuperación de contraseña */
+.form-forgot {
+  display: block;
+  text-align: right;
+  font-size: 0.7rem;
+  color: var(--navy2);
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.form-forgot:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+/* Botón iniciar sesión */
+.btn-login {
+  width: 100%;
+  padding: 13px;
+  background: var(--gold);
+  color: var(--dark);
+  border: none;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.btn-login:hover {
+  background: var(--gold2);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(245, 168, 0, 0.35);
+}
+
+.btn-login:active {
+  transform: translateY(0);
+}
+
+/* Pie de página */
+.login-footer {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  color: #6b7280;
+}
+
+.login-footer a {
+  color: var(--navy2);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-footer a:hover {
+  color: var(--gold);
+}
+
+/* Adaptación a celulares */
+@media (max-width: 480px) {
+  .login-container {
+    max-width: 100%;
+  }
+
+  .login-header {
+    padding: 2rem 1.2rem 1.5rem;
+  }
+
+  .login-form {
+    padding: 1.5rem 1.2rem;
+  }
+}
