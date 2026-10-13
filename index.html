@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Intranet Liceo AVB</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <main class="login-container">
+    <section class="login-card">
+
+      <header class="login-header">
+        <button class="close-button" type="button" aria-label="Cerrar">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <div class="login-icon">
+          <i class="fas fa-user-graduate"></i>
+        </div>
+
+        <h1>Intranet Liceo AVB</h1>
+        <p>Acceso exclusivo para personal y estudiantes</p>
+      </header>
+
+      <form class="login-form" id="loginForm">
+
+        <div class="form-group">
+          <label for="intraUser">Usuario o RUT</label>
+
+          <div class="input-wrap">
+            <i class="fas fa-user"></i>
+            <input
+              type="text"
+              id="intraUser"
+              name="usuario"
+              placeholder="Ej: 12.345.678-9"
+              autocomplete="username"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="intraPass">Contraseña</label>
+
+          <div class="input-wrap">
+            <i class="fas fa-lock"></i>
+            <input
+              type="password"
+              id="intraPass"
+              name="password"
+              placeholder="Ingresa tu contraseña"
+              autocomplete="current-password"
+              required
+            >
+
+            <button
+              class="toggle-pass"
+              type="button"
+              id="togglePass"
+              aria-label="Mostrar contraseña"
+            >
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <a href="#" class="form-forgot">
+          ¿Olvidaste tu contraseña?
+        </a>
+
+        <button type="submit" class="btn-login">
+          <i class="fas fa-sign-in-alt"></i>
+          Iniciar sesión
+        </button>
+
+        <div class="login-footer">
+          ¿Problemas de acceso?
+          <a href="mailto:soporte@liceoavb.cl">
+            Contactar soporte TI
+          </a>
+        </div>
+
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const password = document.getElementById("intraPass");
+    const togglePass = document.getElementById("togglePass");
+
+    togglePass.addEventListener("click", () => {
+      const mostrar = password.type === "password";
+      password.type = mostrar ? "text" : "password";
+
+      togglePass.innerHTML = mostrar
+        ? '<i class="fas fa-eye-slash"></i>'
+        : '<i class="fas fa-eye"></i>';
+    });
+
+    document.getElementById("loginForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Debes conectar este formulario a un sistema de autenticación.");
+    });
+  </script>
+
+</body>
+</html>
