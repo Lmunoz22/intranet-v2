@@ -1,45 +1,99 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width,initial-scale=1" name="viewport" />
-    <title>Recuperar contraseña | Horario AVB</title>
-    <link href="gestion-usuarios.css" rel="stylesheet" />
-    <link href="identidad-avb.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recuperar contraseña | Liceo AVB</title>
+
+    <link rel="stylesheet" href="recuperar.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
-    <main class="login-card">
-      <div class="brand">
-        <div class="brand-mark">AVB</div>
-        <div>
-          <h1>Horario AVB</h1>
-          <p>Liceo Técnico Profesional Antonio Varas de la Barra</p>
+    <main class="recovery-container">
+      <section class="recovery-card">
+        <header class="recovery-header">
+          <div class="recovery-icon">
+            <i class="fas fa-key"></i>
+          </div>
+
+          <h1>Recuperar contraseña</h1>
+
+          <p>Intranet Liceo AVB</p>
+        </header>
+
+        <div class="recovery-body">
+          <p class="recovery-description">
+            ¿Olvidaste tu contraseña? No te preocupes. Ingresa tu RUT o usuario
+            para solicitar ayuda para recuperar el acceso a tu cuenta.
+          </p>
+
+          <form id="recoveryForm">
+            <div class="form-group">
+              <label for="usuario">Usuario o RUT</label>
+
+              <div class="input-wrap">
+                <i class="fas fa-user"></i>
+
+                <input
+                  type="text"
+                  id="usuario"
+                  name="usuario"
+                  placeholder="Ej: 12.345.678-9"
+                  required
+                />
+              </div>
+            </div>
+
+            <button type="submit" class="btn-recovery">
+              <i class="fas fa-paper-plane"></i>
+              Solicitar recuperación
+            </button>
+          </form>
+
+          <div id="mensaje" class="mensaje" role="status"></div>
+
+          <a href="login.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Volver al inicio de sesión
+          </a>
+
+          <div class="recovery-footer">
+            ¿Necesitas ayuda?
+            <a href="mailto:soporte@liceoavb.cl"> Contactar soporte TI </a>
+          </div>
         </div>
-      </div>
-      <h1 style="margin-top: 28px">Recuperar contraseña</h1>
-      <p>
-        Ingresa el usuario o correo institucional asociado a tu cuenta. Si los
-        datos son válidos, el sistema podrá indicarte cómo restablecer el
-        acceso.
-      </p>
-      <form>
-        <div class="field">
-          <label for="identificador">
-            RUT, usuario o correo institucional
-          </label>
-          <input
-            autocomplete="username"
-            id="identificador"
-            name="identificador"
-            placeholder="usuario@liceo.cl"
-            required=""
-            type="text"
-          />
-        </div>
-        <button class="button" type="button">Solicitar recuperación</button>
-      </form>
-      <p class="note" style="margin-top: 16px">Prototipo</p>
-      <a class="recovery-link" href="login.html"> ← Volver al acceso </a>
+      </section>
     </main>
+
+    <script>
+      document
+        .getElementById("recoveryForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const usuario = document.getElementById("usuario").value.trim();
+          const mensaje = document.getElementById("mensaje");
+
+          if (usuario === "") {
+            mensaje.textContent = "Por favor, ingresa tu usuario o RUT.";
+            mensaje.className = "mensaje error";
+            return;
+          }
+
+          mensaje.textContent =
+            "Solicitud registrada visualmente. Para recuperar la contraseña, debes conectar esta página con el sistema de recuperación del liceo.";
+
+          mensaje.className = "mensaje info";
+        });
+    </script>
   </body>
 </html>

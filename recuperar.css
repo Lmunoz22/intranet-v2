@@ -1,0 +1,252 @@
+:root {
+  --navy: #17365d;
+  --navy2: #244b78;
+  --dark: #0a1628;
+  --gold: #f5a800;
+  --gold2: #ffc233;
+  --white: #ffffff;
+  --gray: #6b7280;
+  --border: #e5e7eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a1628, #17365d, #244b78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.recovery-container {
+  width: 100%;
+  max-width: 440px;
+}
+
+.recovery-card {
+  width: 100%;
+  background: var(--white);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+  animation: aparecer 0.5s ease;
+}
+
+.recovery-header {
+  background: linear-gradient(135deg, var(--dark), var(--navy));
+  text-align: center;
+  padding: 35px 25px 28px;
+}
+
+.recovery-icon {
+  width: 68px;
+  height: 68px;
+  background: var(--gold);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  box-shadow: 0 8px 24px rgba(245, 168, 0, 0.3);
+}
+
+.recovery-icon i {
+  font-size: 28px;
+  color: var(--dark);
+}
+
+.recovery-header h1 {
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.recovery-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+.recovery-body {
+  padding: 30px;
+}
+
+.recovery-description {
+  color: var(--gray);
+  font-size: 13px;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.input-wrap i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.input-wrap input {
+  width: 100%;
+  padding: 13px 15px 13px 43px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--dark);
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.input-wrap input:focus {
+  border-color: var(--navy2);
+  box-shadow: 0 0 0 3px rgba(36, 75, 120, 0.1);
+}
+
+.btn-recovery {
+  width: 100%;
+  padding: 14px;
+  background: var(--gold);
+  color: var(--dark);
+  border: none;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.25s;
+}
+
+.btn-recovery:hover {
+  background: var(--gold2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 168, 0, 0.3);
+}
+
+.mensaje {
+  display: none;
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.mensaje.info {
+  display: block;
+  color: #1e40af;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+
+.mensaje.error {
+  display: block;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 24px;
+  color: var(--navy2);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-link i {
+  margin-right: 6px;
+}
+
+.back-link:hover {
+  color: var(--gold);
+}
+
+.recovery-footer {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+  color: var(--gray);
+  font-size: 11px;
+}
+
+.recovery-footer a {
+  display: inline-block;
+  color: var(--navy2);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.recovery-footer a:hover {
+  color: var(--gold);
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+
+  .recovery-header {
+    padding: 28px 20px 24px;
+  }
+
+  .recovery-header h1 {
+    font-size: 19px;
+  }
+
+  .recovery-body {
+    padding: 24px 20px;
+  }
+
+  .recovery-footer a {
+    margin-top: 5px;
+  }
+}
