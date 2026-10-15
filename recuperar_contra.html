@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>Recuperar contraseña | Horario AVB</title>
+    <link href="gestion-usuarios.css" rel="stylesheet" />
+    <link href="identidad-avb.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="login-card">
+      <div class="brand">
+        <div class="brand-mark">AVB</div>
+        <div>
+          <h1>Horario AVB</h1>
+          <p>Liceo Técnico Profesional Antonio Varas de la Barra</p>
+        </div>
+      </div>
+      <h1 style="margin-top: 28px">Recuperar contraseña</h1>
+      <p>
+        Ingresa el usuario o correo institucional asociado a tu cuenta. Si los
+        datos son válidos, el sistema podrá indicarte cómo restablecer el
+        acceso.
+      </p>
+      <form>
+        <div class="field">
+          <label for="identificador">
+            RUT, usuario o correo institucional
+          </label>
+          <input
+            autocomplete="username"
+            id="identificador"
+            name="identificador"
+            placeholder="usuario@liceo.cl"
+            required=""
+            type="text"
+          />
+        </div>
+        <button class="button" type="button">Solicitar recuperación</button>
+      </form>
+      <p class="note" style="margin-top: 16px">Prototipo</p>
+      <a class="recovery-link" href="login.html"> ← Volver al acceso </a>
+    </main>
+  </body>
+</html>
