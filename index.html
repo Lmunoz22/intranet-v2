@@ -1,15 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - Intranet Liceo AVB</title>
+  <link rel="icon" href="avb logo.jpg" type="image/png">
 
+  <!-- CSS Principal -->
   <link rel="stylesheet" href="style.css">
 
+  <!-- Fuente Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- FontAwesome Íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -18,7 +21,7 @@
     <section class="login-card">
 
       <header class="login-header">
-        <button class="close-button" type="button" aria-label="Cerrar">
+        <button class="close-button" type="button" id="closeBtn" aria-label="Cerrar">
           <i class="fas fa-times"></i>
         </button>
 
@@ -29,6 +32,12 @@
         <h1>Intranet Liceo AVB</h1>
         <p>Acceso exclusivo para personal y estudiantes</p>
       </header>
+
+      <!-- Mensaje de Alerta/Error Estilizado -->
+      <div id="alertBox" class="alert-box" style="display: none;">
+        <i id="alertIcon" class="fas"></i>
+        <span id="alertText"></span>
+      </div>
 
       <form class="login-form" id="loginForm">
 
@@ -73,13 +82,13 @@
           </div>
         </div>
 
-        <a href="#" class="form-forgot">
+        <a href="recuperar_contra.html" class="form-forgot">
           ¿Olvidaste tu contraseña?
         </a>
 
-        <button type="submit" class="btn-login">
+        <button type="submit" class="btn-login" id="btnLogin">
           <i class="fas fa-sign-in-alt"></i>
-          Iniciar sesión
+          <span>Iniciar sesión</span>
         </button>
 
         <div class="login-footer">
@@ -93,24 +102,7 @@
     </section>
   </main>
 
-  <script>
-    const password = document.getElementById("intraPass");
-    const togglePass = document.getElementById("togglePass");
-
-    togglePass.addEventListener("click", () => {
-      const mostrar = password.type === "password";
-      password.type = mostrar ? "text" : "password";
-
-      togglePass.innerHTML = mostrar
-        ? '<i class="fas fa-eye-slash"></i>'
-        : '<i class="fas fa-eye"></i>';
-    });
-
-    document.getElementById("loginForm").addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Debes conectar este formulario a un sistema de autenticación.");
-    });
-  </script>
-
+  <!-- JavaScript separado -->
+  <script src="script.js"></script>
 </body>
 </html>
