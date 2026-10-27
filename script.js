@@ -5,21 +5,21 @@ const USUARIOS_VALIDOS = [
     pass: "estudiante123", 
     nombre: "Juan Pérez (Estudiante)", 
     rol: "estudiante",
-    pagina: "estudiante.html" // Asegúrate de tener este archivo en la misma carpeta
+    pagina: "estudiante.html" 
   },
   { 
     usuario: "98.765.432-1", 
     pass: "profesor123", 
     nombre: "María González (Docente)", 
     rol: "profesor",
-    pagina: "profesor.html" // Puedes crearlo o adaptarlo después
+    pagina: "profesor.html" 
   },
   { 
     usuario: "admin.utp", 
     pass: "utp12345", 
     nombre: "Carlos Soto (Encargado UTP)", 
     rol: "utp",
-    pagina: "utp.html" // Puedes crearlo o adaptarlo después
+    pagina: "utp.html" 
   }
 ];
 
